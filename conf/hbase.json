@@ -1,0 +1,35 @@
+{
+  "metrics": [
+    {
+      "category": "Hadoop:service=HBase,name=Master,sub=Server",
+      "name": [
+        ".numRegionServers",
+        ".numDeadRegionServers"
+      ]
+    },
+    {
+      "category": "Hadoop:service=HBase,name=Master,sub=AssignmentManger",
+      "name": [
+        ".ritCount",
+        ".ritCountOverThreshold",
+        ".ritOldestAge"
+      ]
+    },
+    {
+      "category": "Hadoop:service=HBase,name=Master,sub=IPC",
+      "name": [
+        ".numOpenConnections"
+      ]
+    }
+  ],
+  "nodeList": [
+    {
+      "cluster": "shaxihbase",
+      "namenodeIp": [
+        "10.75.57.25",
+        "10.75.57.26"
+      ],
+      "port": "60010"
+    }
+  ]
+}

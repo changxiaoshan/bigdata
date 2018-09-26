@@ -1,0 +1,52 @@
+{
+  "metrics": [
+    {
+      "category": "Hadoop:service=ResourceManager,name=QueueMetrics,q0=root",
+      "name": [
+        ".AppsSubmitted",
+        ".AppsRunning",
+        ".AppsPending",
+        ".AppsCompleted",
+        ".FairShareMB",
+        ".FairShareVCores",
+        ".AvailableMB",
+        ".AvailableVCores"
+      ]
+    },
+    {
+      "category": "Hadoop:service=ResourceManager,name=QueueMetrics,q0=root,q1=hive",
+      "name": [
+        ".AppsSubmitted",
+        ".AppsRunning",
+        ".AppsPending",
+        ".AppsCompleted",
+        ".FairShareMB",
+        ".FairShareVCores",
+        ".AvailableMB",
+        ".AvailableVCores"
+      ]
+    },
+    {
+      "category": "Hadoop:service=ResourceManager,name=ClusterMetrics",
+      "name": [
+        ".NumActiveNMs",
+        ".NumDecommissionedNMs",
+        ".NumLostNMs",
+        ".NumUnhealthyNMs",
+        ".NumRebootedNMs",
+        ".AMLaunchDelayAvgTime",
+        ".AMRegisterDelayAvgTime"
+      ]
+    }
+  ],
+  "nodeList": [
+    {
+      "cluster": "shaxihadoop",
+      "namenodeIp": [
+        "10.75.57.21",
+        "10.75.57.22"
+      ],
+      "port": "8088"
+    }
+  ]
+}

@@ -52,11 +52,14 @@
         ".PercentUsed"
       ]
     }
-  ],  
-"nodeList": [
+  ],
+  "nodeList": [
     {
       "cluster": "shaxihadoop",
-      "namenodeIp":["10.75.57.21","10.75.57.22"],
+      "namenodeIp": [
+        "10.75.57.21",
+        "10.75.57.22"
+      ],
       "port": "50070"
     }
   ]
