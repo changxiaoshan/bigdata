@@ -1,0 +1,63 @@
+{
+  "metrics": [
+    {
+      "category": "Hadoop:service=NameNode,name=FSNamesystem",
+      "role": "nameNode",
+      "name": [
+        ".CapacityTotalGB",
+        ".CapacityUsedGB",
+        ".CapacityRemainingGB",
+        ".BlocksTotal",
+        ".FilesTotal",
+        ".UnderReplicatedBlocks",
+        ".MissingBlocks",
+        ".CorruptBlocks",
+        ".TotalLoad",
+        ".BlockCapacity",
+        ".StaleDataNodes"
+      ]
+    },
+    {
+      "category": "Hadoop:service=NameNode,name=JvmMetrics",
+      "role": "nameNode",
+      "name": [
+        ".LogFatal",
+        ".LogError",
+        ".LogWarn"
+      ]
+    },
+    {
+      "category": "Hadoop:service=NameNode,name=FSNamesystemState",
+      "role": "nameNode",
+      "name": [
+        ".NumDeadDataNodes",
+        ".NumLiveDataNodes",
+        ".NumDecomLiveDataNodes",
+        ".NumDecomDeadDataNodes",
+        ".NumDecommissioningDataNodes"
+      ]
+    },
+    {
+      "category": "Hadoop:service=NameNode,name=RpcActivityForPort9000",
+      "role": "nameNode",
+      "name": [
+        ".RpcProcessingTimeAvgTime",
+        ".CallQueueLength"
+      ]
+    },
+    {
+      "category": "Hadoop:service=NameNode,name=NameNodeInfo",
+      "role": "nameNode",
+      "name": [
+        ".PercentUsed"
+      ]
+    }
+  ],  
+"nodeList": [
+    {
+      "cluster": "shaxihadoop",
+      "namenodeIp":["10.75.57.21","10.75.57.22"],
+      "port": "50070"
+    }
+  ]
+}
