@@ -85,7 +85,7 @@ class HadoopMonitor(Logger):
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
             now = int(float(time.time()))
             # \nsearch.us.byhost.192_168_117_131.http_2xx.os.hits:10|c10sAvg
-            data = "\nsearch.us.byhost.%s.hdfs.%s:%5.2f|c" % (self.cluster,m,result)
+            data = "\nsearch.us.byhost.%s.hdfs.%s:%d|c" % (self.cluster,m,result)
             print s.sendto(data, ("logtailer.monitor.weibo.com", 8333)),data
 
 
