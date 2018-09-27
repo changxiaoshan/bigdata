@@ -9,6 +9,7 @@ import logging
 import sys
 import os
 import re
+import socket
 
 metrics = {}
 
@@ -81,10 +82,12 @@ class HadoopMonitor(Logger):
             else:
                 result = sys.maxint
                 print ('status:%d' % (sys.maxint))
-            data_content = "hdfsSpace,cluster=%s %s=%s" % (self.cluster, m, result)
-            requ_url = requests.post("http://10.75.57.23:8086/write?db=hadoop", data=data_content,
-                                     timeout=self.timeout)
-            print (requ_url.status_code,requ_url.text)
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
+            now = int(float(time.time()))
+            # \nsearch.us.byhost.192_168_117_131.http_2xx.os.hits:10|c10sAvg
+            data = "\nsearch.us.byhost.%s.hdfs.%s:%5.2f|c10sAvg" % (self.cluster,m,result)
+            print s.sendto(data, ("logtailer.monitor.weibo.com", 8333)),data
+
 
     def printResult(self, response, ips, node, nodes):
         for na in nodes['metrics']:
@@ -115,17 +118,12 @@ class HadoopMonitor(Logger):
                         if response.status_code == 200:
                             if '"State" : "active"' in response.text:
                                 self.printResult(response, host, node, nodes)
-                                print ("tags:cluster:%s,item:error" % (self.cluster))
-                                print ('status:0')
                 except:
-                    print ("tags:cluster:%s,item:error" % (self.cluster))
-                    print ('status:1')
                     self.logger_error('%s:%s' % (self.cluster, sys.exc_info()))
 
 
 if __name__ == "__main__":
     h = HadoopMonitor(sys.argv[1])
     h.process()
-    print ("tags:cluster:error,item:error")
-    print ('status:0')
+
 
